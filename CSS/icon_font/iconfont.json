@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5029",
+      "name": "列表",
+      "font_class": "liebiao",
+      "unicode": "344a",
+      "unicode_decimal": 13386
+    },
+    {
+      "icon_id": "110292",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "421469",
+      "name": "居乐乐 地点",
+      "font_class": "ditu",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "710119",
+      "name": "指缘地点5",
+      "font_class": "zhiyuandidian5",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "957606",
+      "name": "手机号码",
+      "font_class": "shouji",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
+    {
+      "icon_id": "4175511",
+      "name": "下箭头",
+      "font_class": "xiajiantou",
+      "unicode": "eb6d",
+      "unicode_decimal": 60269
+    },
+    {
+      "icon_id": "4552970",
+      "name": "邮箱",
+      "font_class": "youxiang",
+      "unicode": "e908",
+      "unicode_decimal": 59656
+    },
+    {
+      "icon_id": "7568865",
+      "name": "24gf-mailboxFull",
+      "font_class": "24gf-mailboxFull",
+      "unicode": "e964",
+      "unicode_decimal": 59748
+    }
+  ]
+}

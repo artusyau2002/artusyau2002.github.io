@@ -1,54 +1,98 @@
+.list_button {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding-right: 10vw;
+    line-height: var(--nav_bar_height);
 
-.fixed_caption{
+}
+
+.list_button:hover {
+    transition: text-shadow 0.2s ease-in-out;
+    text-shadow: white 0 0 5px;
+}
+
+.list_button:hover .navigation_bar_list_column {
+    display: flex;
+    position: absolute;
+    right: 0;
+    background-color: rgb(9, 9, 11);
+    border: white 1px solid;
+}
+
+.navigation_bar_list_column a {
+    width: 200px;
+    text-indent: 50px;
+    text-shadow: none;
+    height: 50px;
+    line-height: 50px;
+}
+
+.navigation_bar_list_column a:hover {
+    transition: text-shadow 0.5s ease-in-out;
+    background-color: rgb(27, 27, 33);
+    text-shadow: white 0 0 10px;
+}
+
+.navigation_bar_list {
+    display: none;
+}
+
+.fixed_caption {
     width: 90vw;
     text-align: center;
 }
 
-.home .title{
-    text-align:center;
+.home .title {
+    text-align: center;
 }
-.home .name{
-    display:block;
+
+.home .name {
+    display: block;
     margin: 0 10vw;
 }
 
 .about .content {
     flex-direction: column;
-    width:100vw;
+    width: 100vw;
 }
-.about .picture{
-    margin:0;
-    height:300px;
+
+.about .picture {
+    margin: 0;
+    height: 300px;
     background-position: 0 -30px;
     align-self: center;
 }
 
 .about .description {
-    width:100vw;
+    width: 100vw;
     align-items: flex-start;
     justify-content: center;
     align-items: center;
 
 }
+
 .about .caption2,
-.about .title2 , 
+.about .title2,
 .about table {
-    width:80%;
+    width: 80%;
     align-self: center;
 }
 
-.contact .content{
+.contact .content {
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
-.contact .left_box{
+
+.contact .left_box {
     width: 90vw;
-    padding:0 5vw;
+    padding: 0 5vw;
 }
-.contact .right_box{
+
+.contact .right_box {
     width: 80vw;
-    margin:0;
+    margin: 0;
 
 }

@@ -32,7 +32,7 @@
     margin-right: 10px;
 }
 
-.navigation_bar a {
+.navigation_bar .navigation_bar_list a {
     margin: 0 14px;
     display: inline-block;
     text-align: center;
@@ -47,8 +47,16 @@
     text-shadow: 0 0 15px rgb(255, 73, 243)
 }
 
-.navigation_bar a:hover {
+.navigation_bar .navigation_bar_list a:hover {
     transition: ease-in-out 0.2s;
     color: white;
     text-shadow: white 0 0 5px;
+}
+
+.list_button {
+    display: none;
+}
+
+.navigation_bar_list_column {
+    display: none;
 }

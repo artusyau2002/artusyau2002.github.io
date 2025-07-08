@@ -41,7 +41,8 @@ body {
 .fixed_caption {
     color: var(--content_text_color);
 }
-.black_card{
+
+.black_card {
     border: rgba(255, 255, 255, 0.5) 0.5px solid;
     border-radius: 10px;
     background-color: rgb(9, 9, 11);
@@ -86,13 +87,18 @@ body {
 }
 
 .arrow:hover {
-    
+
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-@keyframes floating{
-    from{transform:rotate(0deg) translateY(-6px) rotate(0deg)}
-    to{transform:rotate(360deg) translateY(-6px) rotate(-360deg)}
+@keyframes floating {
+    from {
+        transform: rotate(0deg) translateY(-6px) rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg) translateY(-6px) rotate(-360deg)
+    }
 }
 
 #particles-js {
@@ -104,4 +110,3 @@ body {
     /* 放在所有内容后面 */
     opacity: 0.5;
 }
-

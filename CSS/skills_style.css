@@ -10,10 +10,10 @@
 }
 
 .skills .skill_card {
-    
+
     justify-content: flex-start;
     width: 30%;
-    height:auto;
+    height: auto;
     animation: floating 2.5s linear infinite;
 }
 
@@ -27,7 +27,7 @@
     /* justify-content: center;
     align-items: flex-start; */
     height: auto;
-    padding:20px;
+    padding: 20px;
     column-gap: 10px;
     row-gap: 20px;
 }
