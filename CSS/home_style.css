@@ -1,0 +1,45 @@
+.home {
+    width: 100vw;
+    animation: floating 2.5s linear infinite;
+}
+
+.home .title {
+    font-size: 75px;
+}
+
+.home .name:hover {
+    transition: ease-in-out 0.2s;
+    text-shadow: 0 0 20px rgba(255, 73, 243, 0.3)
+}
+
+.home .caption {
+    width: 650px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--content_text_color)
+}
+
+.home .button_list {
+    justify-self: center;
+    width: 375px;
+    justify-content: space-between;
+}
+
+.home .button {
+    width: 175px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 350;
+    border-radius: 10px;
+    background-color: var(--bg-color);
+    outline: 1.5px solid white;
+}
+
+.home .button:hover {
+    transition: ease-in-out 0.2s;
+    text-shadow: white 0 0 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}

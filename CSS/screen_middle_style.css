@@ -1,0 +1,35 @@
+
+.about .content {
+    width: 100vw;
+}
+.about .picture {
+    width: 250px;
+    height: 300px;
+    align-self:flex-start;
+    margin-top: 50px;    
+}
+
+.skills {
+    width:100vw;
+}
+.skills .content {
+    width: 100%;
+}
+.skills .skill_card{
+    width: 25%;
+}
+.skills .skills_box{
+    height:auto;
+}
+.contact .content{
+    width:100vw;
+}
+.contact .left_box{
+    width:40%;
+    margin-left: 5vw;
+}
+.contact .right_box{
+    width:40%;
+    margin-right: 5vw;
+}
+

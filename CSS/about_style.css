@@ -1,0 +1,59 @@
+.about {}
+
+.about .content {
+    width: var(--full_screen_box_width);
+    height: auto;
+    justify-content: space-evenly;
+    align-items: flex-start center;
+}
+
+.about .picture {
+    width: 300px;
+    height: 350px;
+    background-position: 0 -50px;
+    background-image: url("../images/ProfilePic.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    animation: floating 2.5s linear infinite;
+}
+
+.about .description {
+    width: 50%;
+    align-items: flex-start;
+
+}
+
+.about .title2 {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+}
+
+.about .caption2 {
+    font-weight: 300;
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: var(--content_text_color);
+}
+
+.about table {
+    width: 100%;
+    height: fit-content;
+}
+
+.about tr {
+    width: auto;
+}
+
+.about th,
+.about td {
+    width: auto;
+    text-align: left;
+    padding: 5px;
+}
+
+.about td {
+    color: var(--content_text_color);
+}
+
