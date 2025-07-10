@@ -1,0 +1,67 @@
+.timer {
+    width: 100vw;
+
+}
+
+.timer .title {
+    font-size: 75px;
+    animation: floating 2.5s linear infinite;
+}
+
+.timer .name:hover {
+    transition: ease-in-out 0.2s;
+    text-shadow: 0 0 20px rgba(255, 73, 243, 0.3)
+}
+.timer .caption {
+    width: 650px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--content_text_color);
+    animation: floating 2.5s linear infinite;
+}
+
+.timer .timer_show {
+    font-size: 75px;
+    animation: floating 2.5s linear infinite;
+}
+
+.timer .button_box {
+    height: 80px;
+    column-gap: 10px;
+}
+
+.timer button {
+    width: 50px;
+    height: 30px;
+    background-color: transparent;
+    border: solid 1px rgba(255, 255, 255, 0.3);
+}
+
+.timer table{
+    width: 700px;
+}
+.timer td{
+    text-align: center;
+    font-size: 16px;
+}
+.timer th{
+
+}
+
+#recordTable th:nth-child(1),
+#recordTable td:nth-child(1) {
+  width: 20%;
+}
+#recordTable th:nth-child(2),
+#recordTable td:nth-child(2) {
+  width: 30%;
+}
+#recordTable th:nth-child(3),
+#recordTable td:nth-child(3) {
+  width: 30%;
+}
+#recordTable th:nth-child(4),
+#recordTable td:nth-child(4) {
+  width: 20%;
+}

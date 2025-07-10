@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/global_style.css" />
+    <link rel="stylesheet" href="../CSS/block.css" />
+    <link rel="stylesheet" href="../CSS/navigation_bar_style.css" />
+    <link rel="stylesheet" href="../CSS/timer_style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="./CSS/icon_font/iconfont.css" />
+    <link rel="stylesheet" media="screen and (max-width:1200px)" href="./CSS/screen_middle_style.css" />
+    <link rel="stylesheet" media="screen and (max-width:650px)" href="./CSS/screen_small_style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Task Timer</title>
+</head>
+
+<body>
+    <span id="particles-js"></span>
+    <nav class="navigation_bar">
+        <div class="navigation_bar_box flex_row">
+            <div class="icon gradient_text">Artus</div>
+
+            <div class="navigation_bar_list">
+                <a href="../index.html">Home</a>
+            </div>
+
+            <div class="iconfont icon-liebiao list_button">
+                <div class="navigation_bar_list_column flex_column">
+                    <a href="../index.html">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="block1" id="timer"></div>
+
+    <header class="timer flex_column">
+        <h1 class="title">My<span class="name gradient_text"> Task Timer</span></h1>
+
+        <div class="block3"></div>
+
+        <p class="caption fixed_caption ">Task Record</p>
+
+        <div class="block2"></div>
+
+        <div class="timer_show flex_column">
+            <div id="clock">00:00:00:00</div>
+        </div>
+        <div class="button_box flex_row">
+            <button id="startButton">Start</button>
+            <button id="pauseButton">Pause</button>
+            <button id="continueButton">Continue</button>
+            <button id="recordButton">Record</button>
+            <button id="resetButton">Reset</button>
+        </div>
+        <table id="recordTable">
+            <tr>
+                <th>Task</th>
+                <th>Duration</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </table>
+
+    </header>
+    <script>
+        let startTime = null;
+        let timerInterval = null;
+        let elapsedTime = 0;
+
+        function pad(num) {
+            return num.toString().padStart(2, '0');
+        }
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - startTime + elapsedTime;
+
+            const hours = Math.floor(diff / 3600000);
+            const minutes = Math.floor((diff % 3600000) / 60000);
+            const seconds = Math.floor((diff % 60000) / 1000);
+            const milliseconds = Math.floor((diff % 1000) / 10);
+
+            const formatted = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}:${pad(milliseconds)}`;
+            document.getElementById('clock').textContent = formatted;
+        }
+
+        document.getElementById('startButton').addEventListener('click', () => {
+            document.getElementById('startButton').disabled = true;
+            document.getElementById('pauseButton').disabled = false;
+            document.getElementById('resetButton').disabled = false;
+
+            startTime = new Date();
+            elapsedTime = 0;
+            updateTimer();
+            timerInterval = setInterval(updateTimer, 10);
+        });
+
+        document.getElementById('pauseButton').addEventListener('click', () => {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+
+                elapsedTime += new Date() - startTime;
+
+                document.getElementById('continueButton').disabled = false;
+                document.getElementById('pauseButton').disabled = true;
+            }
+        });
+
+        document.getElementById('continueButton').addEventListener('click', () => {
+            if (timerInterval) return;
+
+            document.getElementById('continueButton').disabled = true;
+            document.getElementById('pauseButton').disabled = false;
+
+            startTime = new Date();
+            timerInterval = setInterval(updateTimer, 10);
+        });
+
+        document.getElementById('resetButton').addEventListener('click', () => {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+
+            startTime = null;
+            elapsedTime = 0;
+            document.getElementById('clock').textContent = "00:00:00:00";
+
+            document.getElementById('startButton').disabled = false;
+            document.getElementById('pauseButton').disabled = true;
+            document.getElementById('continueButton').disabled = true;
+        });
+
+        document.getElementById('recordButton').addEventListener('click', () => {
+            const currentTime = document.getElementById('timer').textContent;
+            const taskName = prompt("请输入任务名称：");
+            if (!taskName) return;
+
+            const now = new Date();
+            const dateString = now.toLocaleDateString() + " " + now.toLocaleTimeString();
+
+            const record = { task: taskName, duration: currentTime, date: dateString };
+
+            const storedRecords = JSON.parse(localStorage.getItem("taskRecords") || "[]");
+            storedRecords.push(record);
+            localStorage.setItem("taskRecords", JSON.stringify(storedRecords));
+
+            addRecordToTable(record);
+
+            clearInterval(timerInterval);
+            timerInterval = null;
+            startTime = null;
+            elapsedTime = 0;
+            document.getElementById('timer').textContent = "00:00:00:00";
+
+            document.getElementById('startButton').disabled = false;
+            document.getElementById('pauseButton').disabled = true;
+            document.getElementById('continueButton').disabled = true;
+        });
+        
+    </script>
+    <script src="../JS/particle.js"></script>
+</body>
+
+</html>
